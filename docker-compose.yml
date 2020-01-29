@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  server:
+    ports:
+      - "5000:5000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./requirements.txt:/opt/app/requirements.txt
+      - ./app:/opt/app
+    environment:
+      FLASK_ENV: development
